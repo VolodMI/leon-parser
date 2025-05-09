@@ -26,7 +26,7 @@ public class LeonService {
             DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss 'UTC'")
                     .withZone(ZoneOffset.UTC);
 
-    private final ExecutorService executor = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+    private final ExecutorService executor = Executors.newFixedThreadPool(3);
 
     public void startParsing() {
         JsonNode sportsJson = client.getSports().block();
